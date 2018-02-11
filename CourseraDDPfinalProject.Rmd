@@ -1,0 +1,50 @@
+---
+title: "Coursera DDP Project Final MPG Cars"
+author: "Mukund"
+date: "11 February 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Developing Data Products course, Analysis of Miles per Gallon for various cars
+This project is part of  final exercise Developing Data products course.
+This course if 9th course of Data science specialization.
+
+- This project is reated Shiny R. There is UI and server part of Shiny included in this project
+- Documentation is created using R io_slide presentations
+
+We use mtcars data set for analysis
+
+
+
+## mtcars dataset has information 
+
+
+```{r mtcars, echo = TRUE}
+summary(mtcars)
+```
+
+
+
+## Slide with Plot
+
+```{r}
+
+library(ggplot2)
+data("mtcars")
+qplot(mtcars$hp, mtcars$mpg, color = mtcars$cyl,geom =c("point","smooth"),method = "lm", data = mtcars)
+
+```
+
+## Intreactive analytics for mtcars data
+
+### We plot intereactive graphics and predict Horse power vs Miles per Gallon
+
+- Instructions to user.
++ Use the check box to select model type 1 or 1 or both
++ Use the slider to select mpg of car
++ Press Submit button to see predicted Horsepower from either or both Models.
